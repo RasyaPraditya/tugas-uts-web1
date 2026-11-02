@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog & Stok | Toko Buku Rasyadoang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+    
+    <header class="bar">
+        <a class="brand" href="dashboard.html">📚 Toko Buku Rasyadoang</a>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html" class="aktif">Katalog</a></li>
+                <li><a href="checkout.html">Pemesanan</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+                <li><button id="btnKeluar" type="button">Keluar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Informasi Stok / Katalog</h1>
+        
+        <section class="kartu">
+            <label for="cari">Cari buku</label>
+            <input id="cari" type="search" placeholder="Ketik judul, kode, atau kategori">
+            <p id="jumlah" aria-live="polite"></p>
+            
+            <div class="gulir">
+                <table id="tbStok">
+                    <caption class="sr" hidden>Daftar stok buku</caption>
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Kode</th>
+                            <th>Judul</th>
+                            <th>Kategori</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="kartu" aria-labelledby="ts">
+            <h2 id="ts">Tambah stok baru</h2>
+            <form id="formStok" novalidate>
+                <div class="dua">
+                    <div>
+                        <label for="kode">Kode</label>
+                        <input id="kode" placeholder="BK007">
+                    </div>
+                    <div>
+                        <label for="judul">Judul buku</label>
+                        <input id="judul">
+                    </div>
+                    <div>
+                        <label for="kategori">Kategori</label>
+                        <input id="kategori" list="kat">
+                        <datalist id="kat">
+                            <option>Teknologi</option>
+                            <option>Desain</option>
+                            <option>Sastra</option>
+                            <option>Sains</option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="harga">Harga (Rp)</label>
+                        <input id="harga" type="number" min="1">
+                    </div>
+                    <div>
+                        <label for="jml">Jumlah stok</label>
+                        <input id="jml" type="number" min="0">
+                    </div>
+                </div>
+                
+                <p><button class="btn" type="submit">Tambah ke katalog</button></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Rasyadoang — Tugas UTS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

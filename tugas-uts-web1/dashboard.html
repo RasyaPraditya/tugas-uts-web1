@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Toko Buku Rasyadoang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+    
+    <header class="bar">
+        <a class="brand" href="dashboard.html">📚 Toko Buku Rasyadoang</a>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="dashboard.html" class="aktif">Dashboard</a></li>
+                <li><a href="stok.html">Katalog</a></li>
+                <li><a href="checkout.html">Pemesanan</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+                <li><button id="btnKeluar" type="button">Keluar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sapaan">
+            <h1 id="sapaan">Selamat datang</h1>
+            <p id="jam"></p>
+        </section>
+
+        <section aria-label="Menu utama" class="grid">
+            <a class="menu" href="stok.html">
+                <span class="ik">📦</span>
+                <b>Informasi Stok / Katalog</b>
+                Lihat dan tambah stok buku.
+            </a>
+            <a class="menu" href="tracking.html">
+                <span class="ik">🚚</span>
+                <b>Tracking Pengiriman</b>
+                Lacak pesanan dengan nomor DO.
+            </a>
+            <a class="menu" href="riwayat.html#laporan">
+                <span class="ik">📊</span>
+                <b>Laporan Pemesanan</b>
+                Ringkasan transaksi dan omzet.
+            </a>
+            <a class="menu" href="riwayat.html#history">
+                <span class="ik">🧾</span>
+                <b>History Transaksi</b>
+                Daftar semua pesanan.
+            </a>
+            <a class="menu" href="checkout.html">
+                <span class="ik">🛒</span>
+                <b>Buat Pemesanan</b>
+                Pesan buku sekarang.
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Rasyadoang — Tugas UTS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

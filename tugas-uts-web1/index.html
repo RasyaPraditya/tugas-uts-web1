@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Toko Buku Rasyadoang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+    <main class="login-wrap">
+        <section class="kartu login-box" aria-labelledby="jl">
+            <h1 id="jl">📚 Toko Buku Rasyadoang</h1>
+            <p>Cari Buku? Pasti Ada, Semua Buku Di Dunia Ada Disini.</p>
+            
+            <form id="formLogin" novalidate>
+                <label for="email">Email</label>
+                <input id="email" type="email" autocomplete="username" placeholder="rasya@admin">
+                
+                <label for="password">Password</label>
+                <input id="password" type="password" autocomplete="current-password" placeholder="12345">
+                
+                <div class="aksi-sejajar">
+                    <button class="btn" type="submit">Login</button>
+                    <button class="btn btn-ghost" type="button" id="btnLupa">Lupa Password</button>
+                    <button class="btn btn-ghost" type="button" id="btnDaftar">Daftar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan & History | Toko Buku Rasyadoang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="riwayat">
+    
+    <header class="bar">
+        <a class="brand" href="dashboard.html">📚 Toko Buku Rasyadoang</a>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Katalog</a></li>
+                <li><a href="checkout.html">Pemesanan</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="riwayat.html" class="aktif">Riwayat</a></li>
+                <li><button id="btnKeluar" type="button">Keluar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="laporan">
+            <h1>Laporan Pemesanan</h1>
+            <div class="grid">
+                <div class="kartu">
+                    <p>Total transaksi</p>
+                    <h2 id="rTrx"></h2>
+                </div>
+                <div class="kartu">
+                    <p>Total omzet</p>
+                    <h2 id="rOmzet"></h2>
+                </div>
+                <div class="kartu">
+                    <p>Buku terjual</p>
+                    <h2 id="rBuku"></h2>
+                </div>
+                <div class="kartu">
+                    <p>Pesanan diterima</p>
+                    <h2 id="rSelesai"></h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="kartu">
+            <h2>History Transaksi</h2>
+            <div class="gulir">
+                <table id="tbRiwayat">
+                    <thead>
+                        <tr>
+                            <th>No. DO</th>
+                            <th>Tanggal</th>
+                            <th>Pemesan</th>
+                            <th>Pesanan</th>
+                            <th>Ekspedisi</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Rasyadoang — Tugas UTS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

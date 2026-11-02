@@ -1,0 +1,585 @@
+/* ===== Import Font Modern ===== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+/* ===== Variabel & Palet Warna Elegan ===== */
+:root {
+    /* Main Tone */
+    --navy-tua: #0f172a;       /* Deep Slate Navy */
+    --navy-utama: #1e293b;     /* Primary Dark */
+    --kertas: #f8fafc;         /* Soft Off-White Background */
+    --kartu-bg: #ffffff;       /* Pure White Card */
+    --teks-utama: #334155;     /* Dark Slate Text */
+    --teks-pudar: #64748b;     /* Subtle Muted Text */
+    
+    /* Brand & Accent Colors */
+    --aksen-emas: #d97706;     /* Warm Amber/Gold Aksesoris */
+    --aksen-biru: #2563eb;     /* Modern Academic Blue */
+    --aksen-biru-hover: #1d4ed8;
+    
+    /* Functional Colors */
+    --merah: #ef4444;
+    --hijau: #10b981;
+    --border-halus: #e2e8f0;
+    
+    /* Shadows & Effects */
+    --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+    --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+/* ===== Background Global (Pola Grid Akademis Halus) ===== */
+body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--teks-utama);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--kertas);
+    /* Aksesoris Background: Radial Glow & Micro Grid Pattern */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.04) 0px, transparent 50%),
+        radial-gradient(#cbd5e1 0.75px, transparent 0.75px);
+    background-size: 100% 100%, 100% 100%, 24px 24px;
+    background-attachment: fixed;
+}
+
+/* ===== Tipografi Elegan ===== */
+h1, h2, h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--navy-tua);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.1rem; margin-bottom: 1.5rem; }
+h2 { font-size: 1.4rem; }
+
+a {
+    color: var(--aksen-biru);
+    text-decoration: none;
+}
+
+/* ===== Header & Navigasi Kaca (Glassmorphism) ===== */
+header.bar {
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.3px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a, nav button {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav a:hover, nav button:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+nav a.aktif {
+    background: var(--aksen-biru);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ===== Layout Main ===== */
+main {
+    flex: 1;
+    width: min(1080px, 100%);
+    margin: 0 auto;
+    padding: 2rem 1.2rem 4rem;
+}
+
+/* ===== Aksesoris Kartu ===== */
+.kartu {
+    background: var(--kartu-bg);
+    border-radius: 16px;
+    padding: 1.75rem;
+    border: 1px solid var(--border-halus);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Garis aksen emas tipis di bagian atas kartu */
+.kartu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--aksen-biru), var(--aksen-emas));
+    opacity: 0.7;
+}
+
+/* ===== Tombol Style ===== */
+.btn {
+    background: var(--aksen-biru);
+    color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 0.7rem 1.3rem;
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.92rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn:hover {
+    background: var(--aksen-biru-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-ghost {
+    background: #f1f5f9;
+    color: var(--navy-tua);
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    background: #e2e8f0;
+}
+
+.btn-danger {
+    background: var(--merah);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.82rem;
+    border-radius: 6px;
+}
+
+/* ===== Form Element Style ===== */
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--navy-tua);
+    margin: 1rem 0 0.35rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--border-halus);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.95rem;
+    background: #fafafa;
+    color: var(--navy-tua);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--aksen-biru);
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.err {
+    color: var(--merah);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 0.4rem 0 0;
+}
+
+/* ===== Layout Grid & Flex ===== */
+.grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.dua {
+    display: grid;
+    gap: 0 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* ===== Tampilan Halaman Login ===== */
+.login-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.login-box {
+    width: min(440px, 100%);
+    margin: 0;
+    padding: 2.25rem;
+    border-top: 4px solid var(--aksen-emas);
+}
+
+.login-box h1 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+
+.login-box p {
+    color: var(--teks-pudar);
+    font-size: 0.92rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.aksi-sejajar {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+/* ===== Section Banner / Sapaan Dashboard ===== */
+.sapaan {
+    background: linear-gradient(135deg, var(--navy-tua) 0%, #1e293b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 2.2rem 2rem;
+    margin-bottom: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.sapaan::after {
+    content: "📚";
+    position: absolute;
+    right: 20px;
+    bottom: -15px;
+    font-size: 8rem;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.sapaan h1 {
+    color: #ffffff;
+    margin: 0 0 0.4rem;
+    font-size: 2rem;
+}
+
+.sapaan p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* ===== Card Menu Dashboard ===== */
+.menu {
+    display: block;
+    text-decoration: none;
+    color: var(--teks-utama);
+    background: var(--kartu-bg);
+    border-radius: 14px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-halus);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+}
+
+.menu:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-hover);
+}
+
+.menu b {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--navy-tua);
+    margin-top: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.menu .ik {
+    font-size: 2.2rem;
+    display: inline-block;
+}
+
+/* ===== Tabel Modern ===== */
+.gulir {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-halus);
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 580px;
+    background: #ffffff;
+}
+
+th {
+    background: #f8fafc;
+    color: var(--navy-tua);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-halus);
+    text-align: left;
+}
+
+th, td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border-halus);
+}
+
+tbody tr:hover {
+    background: #f1f5f9;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Buku Cover Thumbnail */
+.cover {
+    width: 44px;
+    height: 60px;
+    border-radius: 6px;
+    background: #e2e8f0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rendah {
+    color: var(--merah);
+    font-weight: 700;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+td input[type=number] {
+    width: 75px;
+    padding: 0.35rem 0.5rem;
+}
+
+/* Ringkasan Checkout */
+.ringkas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-halus);
+}
+
+.ringkas .total {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--aksen-emas);
+}
+
+/* ===== Tracking Status Progress Bar ===== */
+.progres {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.progres div {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--aksen-biru), var(--aksen-emas));
+    border-radius: 20px;
+}
+
+.langkah {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0;
+}
+
+.langkah li {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 0.6rem 0.4rem;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: var(--teks-pudar);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.langkah li.selesai {
+    background: #d1fae5;
+    color: var(--hijau);
+    font-weight: 600;
+}
+
+.langkah li.aktif {
+    background: var(--navy-tua);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.6rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--navy-tua);
+}
+
+dd {
+    margin: 0;
+}
+
+.lencana {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 6px;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+/* ===== Modal Box Overlay ===== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    z-index: 200;
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.75rem;
+    width: min(480px, 100%);
+    max-height: 90vh;
+    overflow: auto;
+    border-top: 5px solid var(--aksen-emas);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    animation: muncul 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.modal-aksi {
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+/* Footer Elegan */
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: var(--navy-tua);
+    color: #94a3b8;
+    font-size: 0.88rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    margin: 0;
+}
+
+@keyframes muncul {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

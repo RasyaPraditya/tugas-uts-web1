@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan | Toko Buku Rasyadoang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+    
+    <header class="bar">
+        <a class="brand" href="dashboard.html">📚 Toko Buku Rasyadoang</a>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Katalog</a></li>
+                <li><a href="checkout.html" class="aktif">Pemesanan</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+                <li><button id="btnKeluar" type="button">Keluar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Pemesanan Buku</h1>
+        
+        <section class="kartu" aria-labelledby="pb">
+            <h2 id="pb">Pilih buku</h2>
+            <div class="dua">
+                <div>
+                    <label for="pilihBuku">Buku</label>
+                    <select id="pilihBuku"></select>
+                </div>
+                <div>
+                    <label for="qty">Jumlah</label>
+                    <input id="qty" type="number" min="1" value="1">
+                </div>
+            </div>
+            
+            <p><button class="btn" type="button" id="btnTambah">Tambah ke pesanan</button></p>
+            
+            <div class="gulir">
+                <table id="tbCart">
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Harga</th>
+                            <th>Jumlah</th>
+                            <th>Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <p id="kosong">Pesanan masih kosong. Pilih buku lalu tekan “Tambah ke pesanan”.</p>
+            
+            <div class="ringkas">
+                <span>Subtotal: <b id="subtotal">Rp 0</b></span>
+                <span>Ongkir: <b id="ongkir">Rp 0</b></span>
+                <span class="total">Total: <span id="total">Rp 0</span></span>
+            </div>
+        </section>
+
+        <form id="formCheckout" class="kartu" novalidate>
+            <h2>Data pemesan &amp; pembayaran</h2>
+            <div class="dua">
+                <div>
+                    <label for="nama">Nama pemesan</label>
+                    <input id="nama">
+                </div>
+                <div>
+                    <label for="emailP">Email</label>
+                    <input id="emailP" type="email">
+                </div>
+                <div>
+                    <label for="telp">No. HP</label>
+                    <input id="telp" type="tel" placeholder="081234567890">
+                </div>
+                <div>
+                    <label for="ekspedisi">Ekspedisi</label>
+                    <select id="ekspedisi"></select>
+                </div>
+                <div>
+                    <label for="paket">Jenis paket</label>
+                    <select id="paket">
+                        <option>Reguler</option>
+                        <option>Express</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="metode">Metode pembayaran</label>
+                    <select id="metode">
+                        <option value="">-- Pilih --</option>
+                        <option>Transfer Bank</option>
+                        <option>E-Wallet</option>
+                        <option>COD</option>
+                    </select>
+                </div>
+            </div>
+            
+            <label for="alamat">Alamat lengkap</label>
+            <textarea id="alamat" rows="3"></textarea>
+            
+            <p><button class="btn" type="submit">Buat pesanan</button></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Rasyadoang — Tugas UTS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

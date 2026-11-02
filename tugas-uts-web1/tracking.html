@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Pengiriman | Toko Buku Rasyadoang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+    
+    <header class="bar">
+        <a class="brand" href="dashboard.html">📚 Toko Buku Rasyadoang</a>
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stok.html">Katalog</a></li>
+                <li><a href="checkout.html">Pemesanan</a></li>
+                <li><a href="tracking.html" class="aktif">Tracking</a></li>
+                <li><a href="riwayat.html">Riwayat</a></li>
+                <li><button id="btnKeluar" type="button">Keluar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Informasi Pengiriman</h1>
+        
+        <section class="kartu">
+            <form id="formCari" novalidate>
+                <label for="noDO">Nomor Delivery Order</label>
+                <input id="noDO" placeholder="Contoh: DO2026001">
+                <p><button class="btn" type="submit">Cari</button></p>
+            </form>
+        </section>
+
+        <section id="hasil" class="kartu" hidden aria-live="polite">
+            <h2>Status: <span class="lencana" id="hStatus"></span></h2>
+            <div class="progres" role="presentation">
+                <div id="bar"></div>
+            </div>
+            <ol class="langkah" id="langkah"></ol>
+            
+            <dl>
+                <dt>Nama pemesan</dt>
+                <dd id="hNama"></dd>
+                <dt>Ekspedisi</dt>
+                <dd id="hEks"></dd>
+                <dt>Tanggal kirim</dt>
+                <dd id="hTgl"></dd>
+                <dt>Jenis paket</dt>
+                <dd id="hPaket"></dd>
+                <dt>Isi pesanan</dt>
+                <dd id="hItem"></dd>
+                <dt>Total pembayaran</dt>
+                <dd id="hTotal"></dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toko Buku Rasyadoang — Tugas UTS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
